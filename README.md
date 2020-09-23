@@ -195,9 +195,66 @@ For each of the following steps, you can save your file and reload the page in y
 
 Congratulations! You should now have a line chart. What else can you do with this by playing with JavaScript, HTML, and CSS?
 
-
 # Submission instructions:
 
 1. Ensure you update the GitHub pages URL at the top of this `README.md` file to point to your page for this assignment. Commit and push your files to GitHub.
 
-1. Submit the URL of **your GitHub Classroom-generated repository** to [the associated assignment on Canvas](https://canvas.instructure.com/courses/1781732/assignments/13207304/edit). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
+1. Submit the URL of **your GitHub Classroom-generated repository** to [the associated assignment on Canvas](https://northeastern.instructure.com/courses/18721/assignments/573839). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
+
+# Assignment Setup (For Instructors Only):
+
+## Create Repo
+
+1. Go to this year's staff GitHub organization.
+
+1. Create the new repository using a meaningful name, consistent with the other assignments for this class and with Canvas.
+
+1. Clone the repository locally.
+
+1. Copy in the files from last year and make any necessary updates, *including assignment links to Canvas.*
+
+1. Commit and push changes.
+
+## GitHub Pages
+
+It is necessary if using GitHub Classroom to set up GitHub pages for the students, as they do not have admin permissions on their repository. To do this, we need to create and move everything to the `gh-pages` branch and delete the `master` branch.
+
+1. Commit the files to the `master` branch on GitHub.
+
+1. `git branch gh-pages`
+
+1. `git checkout gh-pages`
+
+1. `git branch -D master`
+
+1. `git push origin gh-pages`
+
+1. On GitHub, go to `Settings`->`Branches` and set the default branch to `gh-pages`.
+
+1. `git push origin :master`
+
+## Template Repository
+
+1. On GitHub, go to `Settings` and check the box for `Template repository` at the top. This makes GitHub Classroom copies much faster.
+
+## GitHub Classroom
+
+1. Create the assignment on GitHub Classroom.
+
+1. Set the assignment title to be the same as on Canvas and consistent with the other assignments for this class.
+
+1. Change the pre-set repository prefix so that it includes two dashes (--) between the type of assignment and the name of it. E.g., `in-class-programming--javascript` and `assignment--altair-and-jupyterlab-setup`.
+
+1. Set the deadline (23:59 of the due day), make sure it matches the assignment on Canvas, and make sure it is Eastern time.
+
+1. Make the repository Public.
+
+1. Set the template repository (where this file is) as the starter code.
+
+1. Enable feedback pull requests.
+
+1. Update assignment.
+
+1. Enable the assignment invitation URL.
+
+1. In the Canvas assignment, replace the old assignment invitation URL and template repo link URLs with the new ones.
