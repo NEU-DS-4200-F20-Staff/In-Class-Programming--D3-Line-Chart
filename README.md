@@ -17,6 +17,8 @@ In this activity, you are going to create a line chart using D3, HTML, CSS, Java
   
     E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
 
+1. Edit near the top of this `README.md` file to include a clickable hyperlink to the GitHub page website for your repo., replacing the `` `[insert your clickable hyperlink here]` `` code with your markdown. (Detailed instructions for GitHub pages [here](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Using_Github_pages).)
+
 1. `CD` or open a terminal / command prompt window into the cloned folder.
 
 1. Start a simple python webserver. E.g., `python -m http.server`, `python3 -m http.server`, or `py -m http.server`. If you are using python 2 you will need to use `python -m SimpleHTTPServer` instead, but please switch to python 3 as [Python 2 was sunset on 2020-01-01](https://www.python.org/doc/sunset-python-2/).
@@ -197,9 +199,9 @@ Congratulations! You should now have a line chart. What else can you do with thi
 
 # Submission instructions:
 
-1. Ensure you update the GitHub pages URL at the top of this `README.md` file to point to your page for this assignment. Commit and push your files to GitHub.
+1. Commit all your local code and push it to your remote GitHub Classroom-generated repository.
 
-1. Submit the URL of **your GitHub Classroom-generated repository** to [the associated assignment on Canvas](https://northeastern.instructure.com/courses/18721/assignments/573839). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
+1. Submit the URL of **your GitHub Classroom-generated repository** (not your GitHub Page) to the associated assignment on Canvas](https://northeastern.instructure.com/courses/18721/assignments/573839). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
 
 # Assignment Setup (For Instructors Only):
 
