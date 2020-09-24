@@ -63,7 +63,7 @@ Once the data is loaded from the CSV file it is stored in the `data` variable. Y
 
 1. To parse our date data to the format we want, we are going to define a variable called `parseDate` **before** the step where we loaded our data:
     ```javascript
-    var parseDate = d3.timeParse('%m/%d/%Y');
+    let parseDate = d3.timeParse('%m/%d/%Y');
     ```
 Because our dates use forward slashes `/` as delimiters, our format string includes them. If our date was instead `02-02-2009`, we would parse it using `%m-%d-%Y`.
 
@@ -99,9 +99,9 @@ Because our dates use forward slashes `/` as delimiters, our format string inclu
 
 1. In order to have the proper scales for your line chart, you need to know the max and min of your data. This is easy to do manually for static, small datasets but in general this is cumbersome, error-prone, and can be done instead algorithmically. Add these lines after the `console.log` in `lineChart`:
     ```javascript
-      var maxDate  = d3.max(data, function(d){return d.date; });
-      var minDate  = d3.min(data, function(d){return d.date; });
-      var maxPrice = d3.max(data, function(d){return d.price;});
+      let maxDate  = d3.max(data, function(d){return d.date; });
+      let minDate  = d3.min(data, function(d){return d.date; });
+      let maxPrice = d3.max(data, function(d){return d.price;});
       console.log(maxDate, minDate, maxPrice);
     ```
 
@@ -111,9 +111,9 @@ Because our dates use forward slashes `/` as delimiters, our format string inclu
 
 1.  Define the `width` and `height` for the `svg` you will use:
     ```javascript
-    var width  = 600;
-    var height = 500;
-    var margin = {
+    let width  = 600;
+    let height = 500;
+    let margin = {
       top: 30,
       bottom: 30,
       left: 30,
@@ -125,7 +125,7 @@ For each of the following steps, you can save your file and reload the page in y
 
 1. Now, create your `svg` inside the `body` in the DOM by using D3 to `select` the `body` and `append` the `svg`, giving it a `width`, `height`, and `background` color:
     ```javascript
-    var svg = d3.select('body')
+    let svg = d3.select('body')
       .append('svg')
         .attr('width' , width)
         .attr('height', height)
@@ -134,33 +134,33 @@ For each of the following steps, you can save your file and reload the page in y
 
 1. Then create an SVG group `g` for all the elements that will make up our line chart.
     ```javascript
-    var chartGroup = svg
+    let chartGroup = svg
       .append('g')
         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
     ```
 
 1. Now we will define two scales for the x (`d3.scaleTime`) and y (`d3.scaleLinear`) axes and set their `domain` (in the data) and `range` (on the screen):
     ```javascript
-    var xScale = d3.scaleTime()
+    let xScale = d3.scaleTime()
       .domain([minDate, maxDate])
       .range([0, width]);
     ```
     ```javascript
-    var yScale = d3.scaleLinear()
+    let yScale = d3.scaleLinear()
       .domain([0, maxPrice])
       .range([height - margin.bottom - margin.top, 0]);
     ```
 
 1. Then we can draw our axes using these scales:
     ```javascript
-    var xAxis = d3.axisBottom(xScale);
+    let xAxis = d3.axisBottom(xScale);
     chartGroup.append('g')
       .attr('class', 'x axis')
       .attr('transform', 'translate(0, ' + (height - margin.bottom - margin.top) + ')')
       .call(xAxis);
     ```
     ```javascript
-    var yAxis = d3.axisLeft(yScale);
+    let yAxis = d3.axisLeft(yScale);
     chartGroup.append('g')
       .attr('class', 'y axis')
       .attr('transform', 'translate(0, 0)')
@@ -169,7 +169,7 @@ For each of the following steps, you can save your file and reload the page in y
 
 1. Finally, we will draw the line:
     ```javascript
-    var line = d3.line()
+    let line = d3.line()
       .x(function(d){return xScale(d.date);})    
       .y(function(d){return yScale(d.price);})
     ```
@@ -201,7 +201,7 @@ Congratulations! You should now have a line chart. What else can you do with thi
 
 1. Commit all your local code and push it to your remote GitHub Classroom-generated repository.
 
-1. Submit the URL of **your GitHub Classroom-generated repository** (not your GitHub Page) to the associated assignment on Canvas](https://northeastern.instructure.com/courses/18721/assignments/573839). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
+1. Submit the URL of **your GitHub Classroom-generated repository** (not your GitHub Page) to [the associated assignment on Canvas](https://northeastern.instructure.com/courses/18721/assignments/573839). **Do not submit a link to a personal repository. It must be within our class GitHub organization.** 
 
 # Assignment Setup (For Instructors Only):
 
